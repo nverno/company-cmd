@@ -36,7 +36,7 @@
 
 ;; Example:
 ;;
-;; ![example pic](test-cmd.png)
+;; ![example pic](http://raw.githubusercontent.com/nverno/cmd-mode/master/test-cmd.png)
 ;;
 
 ;;; Code:

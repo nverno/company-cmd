@@ -16,7 +16,7 @@ completion-at-point (not provided in base `bat-mode`).
 
 ## Example
 
-![example pic](test-cmd.png)
+![example pic](http://raw.githubusercontent.com/nverno/cmd-mode/master/test-cmd.png)
 
 
 
