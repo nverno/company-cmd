@@ -1,0 +1,6 @@
+*.elc
+*~
+.#*
+/.cask
+loaddefs.el
+*.html 
