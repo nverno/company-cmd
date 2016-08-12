@@ -4,3 +4,4 @@
 /.cask
 loaddefs.el
 *.html 
+*autoloads.el
