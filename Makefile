@@ -10,7 +10,8 @@ README.md: el2markdown.el $(el)
 
 .INTERMEDIATE: el2markdown.el
 el2markdown.el:
-	$(wget) -q -O $@ "https://github.com/Lindydancer/el2markdown/raw/master/el2markdown.el"
+	$(wget) \
+  -q -O $@ "https://github.com/Lindydancer/el2markdown/raw/master/el2markdown.el"
 
 clean:
 	$(RM) *~

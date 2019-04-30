@@ -1,9 +1,9 @@
-;;; company-cmd.el --- company-mode completion backend for cmd.exe scripts -*- lexical-binding: t -*-
+;;; company-cmd.el --- company backend for cmd/batch -*- lexical-binding: t -*-
+
+;; This is free and unencumbered software released into the public domain.
 
 ;; Author: Noah Peart
-;; Copyright (C) 2016 Noah Peart, all rights reserved
 ;; URL: https://github.com/nverno/cmd-mode
-;; Version: 1.0
 ;; Package-Requires ((company "0.8.0") (cl-lib "0.5.0"))
 
 ;; This file is not part of GNU Emacs
@@ -41,11 +41,17 @@
 
 ;;; Code:
 
+(eval-when-compile (require 'cl-lib))
 (require 'company)
-(require 'cl-lib)
 
-(defvar company-cmd-modes '(bat-mode dos-mode cmd-mode ntcmd-mode)
-  "Various modes for editing windows batch files.")
+(defgroup company-cmd nil
+  "CMD/DOS completion backend."
+  :group 'company
+  :prefix "company-cmd-")
+
+(defcustom company-cmd-modes '(bat-mode dos-mode cmd-mode ntcmd-mode)
+  "Various modes for editing windows batch files."
+  :type '(repeat function))
 
 (defvar company-cmd-candidates nil
   "List of completion candidates and meta info.")
@@ -84,8 +90,7 @@
     (call-process "cmd.exe" nil t nil "/c" (concat " help " candidate))
     (goto-char (point-min))
     (company-doc-buffer
-     (buffer-substring-no-properties (line-beginning-position)
-                                     (point-max)))))
+     (buffer-substring-no-properties (line-beginning-position) (point-max)))))
 
 (defun company-cmd-offer-candidates (arg)
   "Offer completion candidates, if an uppercase character is found,
