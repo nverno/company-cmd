@@ -1,7 +1,7 @@
-# company-cmd - company-mode completion backend for cmd.exe scripts
+# company-cmd - company backend for cmd/batch
 
 *Author:* Noah Peart<br>
-*Version:* 1.0<br>
+*URL:* [https://github.com/nverno/company-cmd](https://github.com/nverno/company-cmd)<br>
 
 Simple company-mode completion backend for windows batch/dos scripting modes.
 Offers completion for 80-90 basic commands returned by 'help'.
@@ -13,11 +13,6 @@ Add to a suitable location on the `load-path` and either require or autoload
 
 See: [cmd-mode](http://github.com/nverno/cmd-mode) for combining with
 completion-at-point (not provided in base `bat-mode`).
-
-## Example
-
-![example pic](http://raw.githubusercontent.com/nverno/cmd-mode/master/test-cmd.png)
-
 
 
 ---

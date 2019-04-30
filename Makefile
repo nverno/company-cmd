@@ -1,11 +1,14 @@
 emacs ?= emacs
 wget ?= wget
 
+BATCH := $(emacs) -Q -batch
+EL = $(filter-out %-autoloads.el, $(wildcard *.el))
+
 .PHONY: clean distclean
 all:
 
-README.md: el2markdown.el $(el)
-	$(emacs) -batch -l $< $(el) -f el2markdown-write-readme
+README.md: el2markdown.el $(EL)
+	$(BATCH) -l $< $(EL) -f el2markdown-write-readme
 	$(RM) $@~
 
 .INTERMEDIATE: el2markdown.el
